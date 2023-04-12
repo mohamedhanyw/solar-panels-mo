@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background:#121212;
+}
+
+header {
+  background-color: #121212;
+  color: #00d0f0;
+  padding: 20px;
+  text-align: center;
+}
+
+p{
+    color: #fff;
+}
+
+main {
+  padding: 50px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.col-md-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.col-lg-4 {
+  flex: 0 0 33.33333%;
+  max-width: 33.33333%;
+}
+
+.product {
+  margin: 20px;
+  text-align: center;
+  box-shadow: 0px 3px 10px rgba(197, 12, 12, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.product h2 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.product p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.buy-button {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.buy-button:hover {
+  background-color: #666;
+}
+
+.favorite-star {
+  font-size: 2rem;
+  color: #f5bc42;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.favorite-star:hover {
+  transform: scale(1.2);
+}
