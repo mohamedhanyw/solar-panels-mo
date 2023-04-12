@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>solar_energy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="solar_energy.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!------------------------------ header and rocket-------------------------------- -->
+    <header>
+        <nav>
+      <a href="#home" class="logo"><i class="fas fa-solar-panel"></i></a>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="#customers">Our Customers</a></li>
+        <li><a href="#Solar Panels">Solar Panels</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+
+  <div class="scane" id="home" >
+      <div class="rocket" >
+          
+          <img src="imgPro/rocket.png" alt="">
+        </div>
+        
+        <canvas id="rain"></canvas>
+</div>
+<script>
+var canvas = document.getElementById('rain');
+var ctx = canvas.getContext('2d');
+
+// Set canvas dimensions to match window size
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  
+  // Recreate the raindrops array with new positions and sizes
+  raindrops = [];
+  for (var i = 0; i < 100; i++) {
+    var x = Math.random() * canvas.width;
+    var y = Math.random() * canvas.height;
+    var speed = Math.random() * 5 + 5;
+    var length = Math.random() * 50 + 10;
+    var thickness = Math.random() * 2 + 1;
+    var raindrop = new Raindrop(x, y, speed, length, thickness);
+    raindrops.push(raindrop);
+  }
+}
+
+// Create an array to store the raindrops
+var raindrops = [];
+
+// Define the Raindrop object
+function Raindrop(x, y, speed, length, thickness) {
+  this.x = x;
+  this.y = y;
+  this.speed = speed;
+  this.length = length;
+  this.thickness = thickness;
+  
+  // Draw the raindrop on the canvas
+  this.draw = function() {
+    ctx.beginPath();
+    ctx.strokeStyle = '#333';
+    ctx.lineWidth = this.thickness;
+    ctx.moveTo(this.x, this.y);
+    ctx.lineTo(this.x, this.y + this.length);
+    ctx.stroke();
+  }
+  
+  // Update the raindrop's position
+  this.update = function() {
+    // Move the raindrop down the canvas by its speed
+    this.y += this.speed;
+    
+    // If the raindrop has moved off the bottom of the canvas, reset its position and length
+    if (this.y > canvas.height) {
+      this.y = -50;
+      this.length = Math.random() * 50 + 10;
+    }
+    
+    // Redraw the raindrop on the canvas
+    this.draw();
+  }
+}
+
+// Create 100 raindrops and add them to the raindrops array
+for (var i = 0; i < 100; i++) {
+  var x = Math.random() * canvas.width;
+  var y = Math.random() * canvas.height;
+  var speed = Math.random() * 5 + 5;
+  var length = Math.random() * 50 + 10;
+  var thickness = Math.random() * 2 + 1;
+  var raindrop = new Raindrop(x, y, speed, length, thickness);
+  raindrops.push(raindrop);
+}
+
+// Animate the raindrops using requestAnimationFrame
+function animate() {
+  requestAnimationFrame(animate);
+  
+  // Clear the canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  // Update and draw each raindrop
+  for (var i = 0; i < raindrops.length; i++) {
+    raindrops[i].update();
+  }
+}
+
+// Start the animation
+animate();
+</script>
+
+
+    <!-- معلومات عن الشركة: يمكن أن يشمل ذلك تاريخ الشركة وبيان المهمة والقيم. -->
+
+
+    <section class="company-section" id="about">
+        <div class="company-info">
+          <h2>About Our Company</h2>
+          <p>Our solar panel installation company
+            Our company was founded in 2022 in the USA in New York
+            Our company has the best workers in the world to install and manufacture solar panels
+            Solar panels are installed free of charge on January 1 of each year
+            But the normal price is $170 for installation only.</p>
+        </div>
+        <div class="company-photos">
+          <img src="imgPro/pexels-photo-9875416.jpeg" alt="Photo 1" class="img1">
+          <img src="imgPro/pexels-photo-8853511.jpeg" alt="Photo 2" class="img1">
+          <img src="imgPro/pexels-photo-9875420.jpeg" alt="Photo 3" class="img1">
+        </div>
+      </section>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <!-- الشهادات ودراسات الحالة: 
+    يمكنك تسليط الضوء على المشاريع الناجحة التي أنجزتها للعملاء السابقين وتضمين شهاداتهم. -->
+
+
+
+    <main>
+        <section id="customers">
+          <div class="container">
+            <h2>Our Customers</h2>
+            <div class="customer-list">
+              <div class="customer">
+                <div class="customer-image">
+                  <img src="imgPro/images (26).jpg" alt="Customer Image">
+                </div>
+                <div class="customer-details">
+                  <h3>John Doe</h3>
+                  <p>Email: john.doe@example.com</p>
+                  <p>Phone: 123-456-7890</p>
+                  <p>Address: 123 Main St, Anytown, USA</p>
+                </div>
+              </div>
+              <div class="customer">
+                <div class="customer-image">
+                  <img src="imgPro/images (23).jpg" alt="Customer Image">
+                </div>
+                <div class="customer-details">
+                  <h3>Jane Smith</h3>
+                  <p>Email: jane.smith@example.com</p>
+                  <p>Phone: 485-775-2566</p>
+                  <p>Address: 456 Maple St, Anytown, USA</p>
+                </div>
+              </div>
+              <div class="customer">
+                <div class="customer-image">
+                  <img src="imgPro/images (24).jpg" alt="Customer Image">
+                </div>
+                <div class="customer-details">
+                  <h3>Robert</h3>
+                  <p>Email: Robert.smith@example.com</p>
+                  <p>Phone: 505-571-5566</p>
+                  <p>Address: 470 Maple St, Anytown, USA</p>
+                </div>
+              </div>
+              <div class="customer">
+                <div class="customer-image">
+                  <img src="imgPro/images (25).jpg" alt="Customer Image">
+                </div>
+                <div class="customer-details">
+                  <h3>	Mary</h3>
+                  <p>Email:	Mary.smith@example.com</p>
+                  <p>Phone: 105-554-8456</p>
+                  <p>Address: 40 Maple St, Anytown, USA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    
+
+
+
+
+
+
+
+
+
+       <!-- المحتوى التعليمي:
+ يمكنك تقديم محتوى تعليمي حول الطاقة الشمسية وفوائدها 
+ ، بالإضافة إلى موارد للعملاء لمعرفة المزيد حول كيفية عمل الطاقة الشمسية و
+ كيف يمكنهم توفير المال على فواتير الطاقة الخاصة بهم. -->
+
+
+
+
+ <main>
+    <section id="Solar Panels">
+      <div class="container">
+        <h2>About Solar Panels</h2>
+        <p>Solar panels are devices that convert sunlight into electricity. They are made up of photovoltaic (PV) cells, which are typically made from silicon. When sunlight hits the cells, they produce an electrical current. This current can be used to power homes, businesses, and other electrical devices.</p>
+        <img src="imgPro/pexels-pixabay-433308.jpg" alt="Solar Panel Image" class="solar-panel-image">
+      </div>
+    </section>
+  </main>
+
+
+ <!-- معلومات الاتصال:
+ تأكد من تضمين معلومات الاتصال الخاصة بشركتك ، بما في ذلك رقم الهاتف وعنوان البريد الإلكتروني والعنوان الفعلي.
+  يمكنك أيضًا التفكير في تضمين نموذج اتصال للعملاء لملئه. -->
+
+
+
+
+
+  <main>
+    <section id="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <div class="contact-form">
+          <form action="#" method="POST">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
