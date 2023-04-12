@@ -1,0 +1,399 @@
+/* ******************************************************** */
+body
+{
+    font-family: 'Open Sans', sans-serif;
+    background-color:#121212;
+}
+.scane
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #01070a;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.scane i
+{
+    position: absolute;
+    top: -250px;
+    background: rgba(255, 255, 255, 0.5);
+    animation: animatestars linear infinite;
+}
+
+@keyframes animatestars 
+{
+    0%
+    {
+        transform: translateY(0);
+    }
+    100%
+    {
+        transform: translateY(200vh);
+    }
+}
+
+.scane .rocket
+{
+    position: relative;
+    animation: animate 0.2s ease infinite;;
+}
+
+@keyframes animate
+{
+    0% ,100%
+    {
+        transform: translateY(-2px);
+    }
+    50%
+    {
+        transform: translateY(2px);
+    }
+}
+
+.scane .rocket::before
+{
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 200px;
+    background: linear-gradient(#00d0ff,transparent);
+}
+
+.scane .rocket::after
+{
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 200px;
+    background: linear-gradient(#00d0ff,transparent);
+    filter: blur(20px);
+}
+
+#rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+/* ********************************************************* */
+header {
+    background-color: #121212;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  nav .logo {
+    color: #fff;
+    font-size: 2rem;
+    margin-right: auto;
+    float: right;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav li {
+    margin: 0 10px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  nav a:hover {
+    color:#00d0ff;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    header {
+      height: auto;
+      padding: 10px;
+    }
+    
+    nav {
+      flex-direction: column;
+    }
+    
+    nav .logo {
+      margin: 0;
+      float: none;
+      text-align: center;
+    }
+    
+    nav ul {
+      margin-top: 10px;
+      flex-direction: column;
+    }
+    
+    nav li {
+      margin: 10px 0;
+    }
+  }
+
+
+  /******************************************************************************************************/
+  /******************************************************************************************************/
+  /******************************************************************************************************/
+  /******************************************************************************************************/
+ h2{
+    color: #00d0ff;
+ }
+  .company-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+  }
+  
+  .company-info {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  
+  .company-info h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .company-info p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #fff;
+  }
+  
+  .company-photos {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .img1{
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+  }
+  .img1:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+  }
+  .company-photos img {
+    
+    width: 30%;
+    margin: 10px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .company-section {
+      padding: 25px;
+    }
+  
+    .company-info {
+      width: 100%;
+    }
+  
+    .company-photos img {
+      width: 45%;
+      margin: 5px;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /******************************************************************************************************/
+  /******************************************************************************************************/
+  /******************************************************************************************************/
+
+
+  main {
+    padding: 50px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .customer-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+  }
+  
+  .customer {
+    width: 300px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .customer-image {
+    margin-bottom: 20px;
+  }
+  
+  .customer-image img {
+    max-width: 100%;
+    border-radius: 50%;
+  }
+  
+  .customer-details {
+    text-align: center;
+  }
+  
+  .customer h3 {
+    margin-top: 0;
+    color: #00d0ff;
+  }
+  
+  .customer p {
+    margin: 5px 0;
+    color: #fff;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /******************************************************************************************************/
+  /******************************************************************************************************/
+  /******************************************************************************************************/
+  p {
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .solar-panel-image {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  /******************************************************************************************************/
+  /******************************************************************************************************/
+  /******************************************************************************************************/
+
+
+
+  main {
+    padding: 50px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  .contact-form {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  form {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #00d0ff;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #444;
+  }
